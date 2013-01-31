@@ -1,13 +1,5 @@
-
 /*
 Adaptado para ARDUINO 1.0 - Cambia el nombre de funciones en serial e I2C y tambien definiciones de tipos.
-
-Probado con un esquema sin resistencias I2C. 
-La salida es siempre la misma independientemente de la posicion del sensor.
-Probado con Arduino UNO y Nano con el mismo esquema y mismo resultado.
-
-Modificamos esta linea para probar GitHub
-
 */
 
 #include <Wire.h>
@@ -40,7 +32,14 @@ void loop()
   int x, y, z;
  
   readFrom(DEVICE, regAddress, TO_READ, buff); //read the acceleration data from the ADXL345
-  
+  /*
+  Serial.write(buff[0]);
+  Serial.write(buff[1]);
+  Serial.write(buff[2]);
+  Serial.write(buff[3]);
+  Serial.write(buff[4]);
+  Serial.write(buff[5]);
+  */
  
   //each axis reading comes in 10 bit resolution, ie 2 bytes.  Least Significat Byte first!!
   //thus we are converting both bytes in to one int
@@ -49,11 +48,12 @@ void loop()
   z = (((int)buff[5]) << 8) | buff[4];
  
   //we send the x y z values as a string to the serial port
-  sprintf(str, "x:%d y:%d z:%d", x, y, z); 
-  Serial.print(str);
-  Serial.print("\n");
+  //sprintf(str, "x:%d y:%d z:%d", x, y, z); 
+  sprintf(str, "%d %d %d", x, y, z);
+  Serial.println(str);
+  //Serial.print("\n");
   //It appears that delay is needed in order not to clog the port
-  delay(300);
+  delay(200);
 }
  
 //---------------- Functions
