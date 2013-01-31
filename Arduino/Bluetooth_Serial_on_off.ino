@@ -4,6 +4,7 @@
  Tambien lo he utilizado con el puerto serie del modem bluetooth y funciona correctamente.
  Logicamente los puertos serie son distintos.
  Utilizo SecureCRT como programa de comunicaciones.
+ Edición desde la web
  */
 
 void setup() {
