@@ -6,6 +6,8 @@ Probado con un esquema sin resistencias I2C.
 La salida es siempre la misma independientemente de la posicion del sensor.
 Probado con Arduino UNO y Nano con el mismo esquema y mismo resultado.
 
+Modificamos esta linea para probar GitHub
+
 */
 
 #include <Wire.h>
