@@ -11,8 +11,6 @@ PFont fontA;
 int[] nums = new int [3];
 int SIZE = 360, SIZEX = 360;
 
-//#define _360div2xPI     57.29577951
-
 void setup() {
   size(SIZEX, SIZE, P3D);
   println(Serial.list());
@@ -42,10 +40,10 @@ void draw() {
   float aay = nums[1];
   float aaz = nums[2];
   
-  float rho = atan(aax/sqrt((aay*aay)+(aaz*aaz)))*57.29577951;
-  float phi = atan(aay/sqrt((aax*aax)+(aaz*aaz)))*57.29577951;
+  float rho = atan(aax/sqrt((aay*aay)+(aaz*aaz))) * 57.29577951;   //angulo en radianes
+  float phi = atan(aay/sqrt((aax*aax)+(aaz*aaz))) * 57.29577951;   //angulo en radianes
   //float theta = atan(sqrt((aay*aay)+(aax*aax))/aaz)*57.29577951;
-  float theta = atan(aaz/sqrt((aay*aay)+(aax*aax)))*57.29577951;
+  float theta = atan(aaz/sqrt((aay*aay)+(aax*aax))) * 57.29577951; //angulo en radianes
   //println (rho+" "+phi+" "+theta);
  
   translate(SIZEX/2, SIZE/2, -400);
