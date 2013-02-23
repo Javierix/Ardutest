@@ -22,7 +22,7 @@ PFont font;
 void setup() 
 {
   size(600, 600);
-  //myPort = new Serial(this, "/dev/ttyUSB0", 9600);  
+  //myPort = new Serial(this, "/dev/ttyACM0", 9600);  
   myPort = new Serial(this, "COM5", 9600);
   
   // The font must be located in the sketch's 
