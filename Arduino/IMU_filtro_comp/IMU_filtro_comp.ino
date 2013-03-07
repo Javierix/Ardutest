@@ -213,6 +213,8 @@ void loop()
     Serial.print(",  ");    
     Serial.print(RwAcc[0]);  //Inclination X axis (as measured by accelerometer)
     Serial.print(",  ");
+    Serial.print(RwGyro[0]);  //Inclination X axis (calculado a partir del giroscopio)
+    Serial.print(",  ");
     Serial.print(RwEst[0]);  //Inclination X axis (estimated / filtered)
     Serial.println("");
 
